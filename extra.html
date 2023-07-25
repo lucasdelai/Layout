@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="extrastyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Bora Codar23</title>
+</head>
+<body>
+    <main>
+        <form>
+            <section class="step-progress">
+                <div class="step current" data-step>
+                    <div class="circle">
+                        <span>1</span>
+                        <i class="ph ph-bold ph-check"></i>
+                    </div>
+                    <p>Contato</p>
+                </div>
+                <div class="arrow">
+                    <i class="ph ph-caret-right"></i>
+                </div>
+                <div class="step" data-step="">
+                    <div class="circle">
+                        <span>2</span>
+                        <i class="ph ph-bold ph-check"></i>
+                    </div>
+                    <p>Empresa</p>
+                </div>
+                <div class="arrow">
+                    <i class="ph ph-caret-right"></i>
+                </div>
+                <div class="step" data-step>
+                    <div class="circle">
+                        <span>3</span>
+                        <i class="ph ph-bold ph-check"></i>
+                    </div>
+                    <p>Projeto</p>
+                </div>
+            </section>
+    
+            <div class="form-step active">
+                <section class="informacoes">
+                    <div class="info">
+                        <label for="name">Nome</label>
+                        <input
+                          type="text"
+                          name="name"
+                          id="name"
+                          placeholder="Como prefere ser chamado"
+                          required/>
+                          <p class="msg-error">Campo Obrigatório</p>
+                    </div>
+        
+                    <div class="info">
+                        <label for="phone">Telefone</label>
+                        <input
+                          type="text" name="phone" id="phone" placeholder="Digite seu número de WhatsApp"
+                          maxlength="15"
+                          onkeypress="return /\d/.test(event.key)"
+                          required/>
+                          <p class="msg-error">Campo Obrigatório</p>
+                    </div>
+        
+                    <div class="info">
+                        <label for="email">E-mail</label>
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          placeholder="Digite seu e-mail"
+                          required/>
+                          <p class="msg-error">Campo Obrigatório</p>
+                    </div>
+                </section>
+        
+                <div class="btn">
+                    <div></div>
+                    <button type="button" class="btn-next" data-action="next">CONTINUAR</button>
+                </div>
+            </div>
+    
+            <div class="form-step hide">
+                <section class="informacoes">
+                    <div class="info">
+                        <label>Nome da empresa</label>
+                        <input
+                          type="text"
+                          name="name"
+                          id="business-name" 
+                          placeholder="Qual é o nome da empresa" 
+                          required>
+                          <p class="msg-error">Campo Obrigatório</p>
+                    </div>
+        
+                    <div class="info">
+                        <label>Número de funcionários</label>
+                        <input
+                          id="business-colab-number"
+                          name="business-colab-number"
+                          type="number" placeholder="Digite o número de colaboradores"
+                          
+                          onkeypress="return /\d/.test(event.key)"
+                          required/>
+                          <p class="msg-error">Campo Obrigatório</p>
+                    </div>
+        
+                    <div class="info">
+                        <label>Sobre seu negócio</label>
+                        <textarea 
+                           id="business-about"
+                           name="business-about"
+                           placeholder="Fale sobre o seu negócio"
+                           required></textarea>
+                           <p class="msg-error">Campo Obrigatório</p>
+                    </div>
+                </section>
+        
+                <div class="btn">
+                    <button
+                      type="button" class="btn-back" data-action="prev">VOLTAR</button>
+                    <button
+                      type="button" class="btn-next"
+                      data-action="next">CONTINUAR</button>
+                </div>
+            </div>
+    
+            <div class="form-step hide">
+                <section class="informacoes">
+                    <div class="info">
+                        <label for="project">Objetivos do projeto</label>
+                        <textarea
+                         id="project"
+                         name="project"
+                         placeholder="Descreva quais os objetivos desse projeto"
+                         required></textarea>
+                         <p class="msg-error">Campo Obrigatório</p>
+                    </div>
+                </section>
+        
+                <div class="btn">
+                    <button type="button" class="btn-back" data-action="prev">VOLTAR</button>
+                    <button type="submit" class="btn-next">ENVIAR PROPOSTA</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="extra.js"></script>
+</body>
+</html>

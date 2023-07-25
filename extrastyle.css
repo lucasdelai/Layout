@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smooth: antialiased;
+}
+
+:root {
+    --color-first:   #E1E1E6;
+    --color-second:  #FFF;
+    --color-third:   #633BBC;
+    --color-fourth:  #8257E5;
+    --color-fifth:   #8D8D99;
+    --color-sixth:   #7C7C8A;
+    --color-seventh: #323238;
+    --color-eighth:  #1D8841;
+    font-size: 16px;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+textarea{
+    font-family: 'IBM Plex Sans', sans-serif;
+    resize: none;
+    
+}
+
+main{
+    max-width: 100%;
+    max-height: 100%;
+    background-color: var(--color-second);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+    border: 1px solid var(--color-first);
+    border-radius: 6px;
+}
+
+form{
+    overflow: hidden;
+}
+
+.step-progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 32px;
+    width: 100%;
+}
+
+label{
+    font-weight: 700;
+    color: var(--color-seventh);
+}
+
+.step{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+
+    border-radius: 2px;
+}
+.step p{
+    font-weight: 700;
+    color: var(--color-sixth);
+}
+
+.step.current p{
+    color: var(--color-seventh);
+}
+
+.step .circle{
+    width: 28px;
+    height: 28px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-color:var(--color-first);
+    border-radius: 50px;
+    
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--color-sixth);
+    
+}
+.step .circle i{
+    display: none;
+}
+
+.step.current .circle{
+    background-color:var(--color-third);
+    color: var(--color-second);
+}
+
+.step.completed .circle{
+    background-color:var(--color-eighth);
+}
+.step.completed .circle span{
+    display: none;
+}
+.step.completed .circle i{
+    display: block;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+i{
+    font-size:20px;
+    color: var(--color-seventh);
+    vertical-align: bottom;
+}
+
+.informacoes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-first);
+
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;    
+
+    width: 100%;
+}
+
+.info.error label{
+    color: red;
+    
+}
+
+.info.error input,
+.info.error textarea{
+    border: 1px solid red;
+}
+
+.msg-error{
+    display: none;
+}
+
+.info.error .msg-error{
+    display: block;
+    color: red;
+    font-size: 14px;
+}
+
+input, textarea{
+    display: flex;
+    text-align: start;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid var(--color-first);
+    border-radius: 2px;
+    font-weight: 400;
+    color: var(--color-fifth);
+    font-size: 16px;
+    line-height: 24px;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+    border: 1px solid var(--color-fourth);
+}
+
+.btn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    white-space: nowrap;
+    padding-top: 32px;
+    
+}
+
+.btn-back {
+    background-color: var(--color-second);
+    color: var(--color-third);
+    border: 1px solid var(--color-fourth);
+}
+
+button{
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 16px 32px;
+    gap: 8px;
+
+    background-color: #633BBC;
+    color: var(--color-first);
+    font-weight: 700;
+    border-radius: 6px;
+
+    border: none;
+    cursor: pointer;
+}
+
+.btn-back:hover {
+    background-color: var(--color-first);
+}
+
+.btn-next:hover{
+
+    background-color: var(--color-fourth);
+}
+
+.form-step{
+    display: block;
+}
+
+
+@keyframes appear {
+    0% {
+        scale: .7;
+        opacity: 0;
+    }
+}
+
+.form-step.active {
+    animation: appear 200ms 100ms ease-in-out backwards;
+}
+
+@keyframes slideout {
+    100% {
+        transform: translateX(50%);
+        opacity: 0;
+    }
+}
+
+.form-step {
+    animation: slideout 200ms ease-in-out forwards;
+}
+
+.hide{
+    display: none;
+}
